@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy Hug - Ropa Deportiva para Perros | Mundial 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #1B5E20;
+            --light-green: #4CAF50;
+            --white: #FFFFFF;
+            --black: #0D0D0D;
+            --gold: #FFD700;
+            --red: #C8102E;
+            --blue: #003DA5;
+            --gray: #F5F5F5;
+            --gray-dark: #333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--gray-dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--black);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255,215,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .admin-btn {
+            background: var(--red);
+            color: var(--white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .admin-btn:hover {
+            background: var(--blue);
+            transform: scale(1.05);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--green) 0%, var(--light-green) 50%, var(--black) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px);
+            animation: fieldMove 15s linear infinite;
+        }
+
+        @keyframes fieldMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            animation: slideDown 0.8s ease-out;
+            font-weight: bold;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 18px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255,215,0,0.5);
+        }
+
+        /* SECCIONES */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            text-align: center;
+            color: var(--green);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        /* COLECCIONES */
+        .collections-bg {
+            background: linear-gradient(135deg, var(--gray) 0%, #FAFAFA 100%);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .collection-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid var(--gold);
+            animation: popIn 0.6s ease-out;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collection-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--green) 100%);
+        }
+
+        .collection-content {
+            padding: 25px;
+        }
+
+        .collection-content h3 {
+            font-size: 1.5em;
+            color: var(--green);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .collection-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .collection-price {
+            font-size: 1.8em;
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #999;
+            padding: 60px 20px;
+            font-size: 1.2em;
+        }
+
+        /* JUGADORES */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .player-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 3px solid var(--blue);
+            position: relative;
+            animation: popIn 0.6s ease-out;
+        }
+
+        .player-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .player-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--light-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .player-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--light-green) 100%);
+        }
+
+        .player-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .player-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .player-content h3 {
+            font-size: 1.4em;
+            color: var(--black);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .player-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* COMENTARIOS */
+        .comments-bg {
+            background: linear-gradient(135deg, var(--gray) 0%, #FAFAFA 100%);
+        }
+
+        .comments-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .comment-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            font-size: 1em;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .comment-btn {
+            width: 100%;
+            background: var(--green);
+            color: var(--white);
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.05em;
+        }
+
+        .comment-btn:hover {
+            background: var(--light-green);
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .comment-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: var(--green);
+            font-size: 1.1em;
+        }
+
+        .comment-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .comment-text {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .no-comments {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 1.1em;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .social-icon:hover {
+            background: var(--red);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .tagline {
+            color: var(--gold);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-dark);
+            padding-top: 30px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* MODAL ADMIN */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            color: var(--gray-dark);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--red);
+        }
+
+        .modal h2 {
+            color: var(--green);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .modal h3 {
+            color: var(--green);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--gray);
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-label {
+            display: block;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, #FFC700 100%);
+            border: 3px dashed var(--green);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            color: var(--black);
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .file-label:hover {
+            background: linear-gradient(135deg, #FFD700, var(--gold));
+            transform: scale(1.02);
+        }
+
+        .file-name {
+            margin-top: 10px;
+            padding: 10px;
+            background: var(--gray);
+            border-radius: 5px;
+            color: var(--gray-dark);
+            font-size: 0.9em;
+            word-break: break-word;
+        }
+
+        .content-list {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .content-item {
+            background: var(--gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .content-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .content-item-info {
+            flex: 1;
+        }
+
+        .content-item-info strong {
+            display: block;
+            color: var(--green);
+        }
+
+        .content-item-info small {
+            color: #666;
+        }
+
+        .delete-btn {
+            background: var(--red);
+            color: var(--white);
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .delete-btn:hover {
+            background: #A4161A;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .collections-grid,
+            .players-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🐕⚽ PUPPY HUG</div>
+            <ul class="nav-links">
+                <li><a href="#colecciones">Colecciones</a></li>
+                <li><a href="#jugadores">Jugadores</a></li>
+                <li><a href="#comentarios">Comunidad</a></li>
+            </ul>
+            <button class="admin-btn" onclick="openAdminModal()">👨‍💼 Admin</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🏆 El Mundial también se juega en cuatro patas 🐾</h1>
+            <p>Ropa deportiva premium para tu mejor amigo</p>
+            <button class="hero-btn" onclick="document.getElementById('colecciones').scrollIntoView()">
+                ⚽ Ver Colecciones
+            </button>
+        </div>
+    </section>
+
+    <!-- COLECCIONES -->
+    <section class="collections-bg" id="colecciones">
+        <div class="section">
+            <h2 class="section-title">⭐ Colecciones Mundial 2026</h2>
+            <div class="collections-grid" id="collectionsGrid">
+                <div class="empty-state">📭 Colecciones próximamente</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JUGADORES -->
+    <section id="jugadores">
+        <div class="section">
+            <h2 class="section-title">🌟 Si ellos hacen historia, tu perro también</h2>
+            <div class="players-grid" id="playersGrid">
+                <div class="empty-state">📭 Jugadores próximamente</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMENTARIOS -->
+    <section class="comments-bg" id="comentarios">
+        <div class="section">
+            <h2 class="section-title">💬 Comparte tu experiencia</h2>
+            <div class="comments-container">
+                <div class="comment-form">
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="commentName">Tu nombre</label>
+                            <input type="text" id="commentName" placeholder="¿Cómo te llamas?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commentEmail">Tu email</label>
+                            <input type="email" id="commentEmail" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="commentText">Tu comentario</label>
+                            <textarea id="commentText" placeholder="¿Qué piensas de Puppy Hug?" required></textarea>
+                        </div>
+                        <button type="submit" class="comment-btn">📤 Enviar Comentario</button>
+                    </form>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <div class="no-comments">👂 Sin comentarios aún. ¡Sé el primero!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nosotros</h4>
+                <p class="tagline">Porque el fútbol se vive en familia… y tu perro es parte de ella ❤️</p>
+                <p style="color: #ccc;">Ropa deportiva premium para perros con la pasión del Mundial.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Métodos de Pago</a></li>
+                    <li><a href="#">Envíos Nacionales</a></li>
+                    <li><a href="#">Envíos Internacionales</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">𝕏</a>
+                    <a href="#" class="social-icon">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Puppy Hug | Ropa Deportiva para Perros | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- MODAL ADMIN -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAdminModal()">&times;</span>
+            <h2>👨‍💼 Panel de Administrador</h2>
+            <p style="color: #666; margin-bottom: 20px;">Ingresa tu contraseña para subir contenido</p>
+            
+            <div class="form-group">
+                <label for="adminPassword">Contraseña:</label>
+                <input type="password" id="adminPassword" placeholder="Contraseña">
+            </div>
+            <button class="hero-btn" style="width: 100%; margin-bottom: 30px;" onclick="verifyPassword()">Acceder</button>
+
+            <!-- PANEL ADMIN -->
+            <div id="adminPanel" style="display: none;">
+                <!-- SUBIR COLECCIONES -->
+                <h3>Subir Colección</h3>
+                <form id="collectionForm">
+                    <div class="form-group">
+                        <label for="collName">Nombre del Producto:</label>
+                        <input type="text" id="collName" placeholder="Ej: Camiseta Brasil" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="collDesc">Descripción:</label>
+                        <textarea id="collDesc" placeholder="Descripción detallada" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="collPrice">Precio:</label>
+                        <input type="text" id="collPrice" placeholder="Ej: $45.000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="collImage">Imagen del Producto:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="collImage" accept="image/*" required>
+                            <label for="collImage" class="file-label">📷 Selecciona una imagen</label>
+                        </div>
+                        <div id="collFileName" class="file-name"></div>
+                    </div>
+                    <button type="submit" class="comment-btn" style="background: var(--green);">✅ Subir Colección</button>
+                </form>
+
+                <h3>Colecciones Subidas</h3>
+                <div class="content-list" id="collectionsList"></div>
+
+                <!-- SUBIR JUGADORES -->
+                <h3>Subir Jugador</h3>
+                <form id="playerForm">
+                    <div class="form-group">
+                        <label for="playerName">Nombre del Jugador:</label>
+                        <input type="text" id="playerName" placeholder="Ej: Messi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerDesc">Descripción:</label>
+                        <textarea id="playerDesc" placeholder="Descripción del jugador" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerImage">Foto del Jugador:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="playerImage" accept="image/*" required>
+                            <label for="playerImage" class="file-label">📷 Selecciona una imagen</label>
+                        </div>
+                        <div id="playerFileName" class="file-name"></div>
+                    </div>
+                    <button type="submit" class="comment-btn" style="background: var(--green);">✅ Subir Jugador</button>
+                </form>
+
+                <h3>Jugadores Subidos</h3>
+                <div class="content-list" id="playersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = "admin123";
+        const STORAGE_KEY = "puppyHugStore";
+
+        function initializeStorage() {
+            if (!localStorage.getItem(STORAGE_KEY)) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                    collections: [],
+                    players: [],
+                    comments: []
+                }));
+            }
+        }
+
+        function getData() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        }
+
+        function saveData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // ADMIN
+        function openAdminModal() {
+            document.getElementById('adminModal').style.display = 'block';
+            document.getElementById('adminPassword').focus();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+
+        function verifyPassword() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('adminPanel').style.display = 'block';
+                document.getElementById('adminPassword').parentElement.style.display = 'none';
+                document.querySelector('button[onclick="verifyPassword()"]').style.display = 'none';
+                loadAdminContent();
+            } else {
+                alert('❌ Contraseña incorrecta');
+            }
+        }
+
+        // COLECCIONES
+        document.getElementById('collImage').addEventListener('change', function() {
+            document.getElementById('collFileName').textContent = this.files[0]?.name ? `✅ ${this.files[0].name}` : '';
+        });
+
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const file = document.getElementById('collImage').files[0];
+            if (!file) {
+                alert('⚠️ Selecciona una imagen');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = getData();
+                data.collections.push({
+                    name: document.getElementById('collName').value,
+                    description: document.getElementById('collDesc').value,
+                    price: document.getElementById('collPrice').value,
+                    image: e.target.result
+                });
+                saveData(data);
+                loadCollections();
+                loadAdminContent();
+                document.getElementById('collectionForm').reset();
+                document.getElementById('collFileName').textContent = '';
+                alert('✅ Colección subida');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // JUGADORES
+        document.getElementById('playerImage').addEventListener('change', function() {
+            document.getElementById('playerFileName').textContent = this.files[0]?.name ? `✅ ${this.files[0].name}` : '';
+        });
+
+        document.getElementById('playerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const file = document.getElementById('playerImage').files[0];
+            if (!file) {
+                alert('⚠️ Selecciona una imagen');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = getData();
+                data.players.push({
+                    name: document.getElementById('playerName').value,
+                    description: document.getElementById('playerDesc').value,
+                    image: e.target.result
+                });
+                saveData(data);
+                loadPlayers();
+                loadAdminContent();
+                document.getElementById('playerForm').reset();
+                document.getElementById('playerFileName').textContent = '';
+                alert('✅ Jugador subido');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        function loadAdminContent() {
+            const data = getData();
+            
+            // Colecciones
+            let collHtml = '';
+            data.collections?.forEach((item, idx) => {
+                collHtml += `
+                    <div class="content-item">
+                        <img src="${item.image}">
+                        <div class="content-item-info">
+                            <strong>${item.name}</strong>
+                            <small>${item.price}</small>
+                        </div>
+                        <button type="button" class="delete-btn" onclick="deleteCollection(${idx})">🗑️</button>
+                    </div>
+                `;
+            });
+            document.getElementById('collectionsList').innerHTML = collHtml || '<p style="color: #999;">Sin colecciones</p>';
+
+            // Jugadores
+            let playerHtml = '';
+            data.players?.forEach((item, idx) => {
+                playerHtml += `
+                    <div class="content-item">
+                        <img src="${item.image}">
+                        <div class="content-item-info">
+                            <strong>${item.name}</strong>
+                            <small>${item.description.substring(0, 40)}...</small>
+                        </div>
+                        <button type="button" class="delete-btn" onclick="deletePlayer(${idx})">🗑️</button>
+                    </div>
+                `;
+            });
+            document.getElementById('playersList').innerHTML = playerHtml || '<p style="color: #999;">Sin jugadores</p>';
+        }
+
+        function deleteCollection(idx) {
+            if (confirm('¿Eliminar colección?')) {
+                const data = getData();
+                data.collections.splice(idx, 1);
+                saveData(data);
+                loadCollections();
+                loadAdminContent();
+            }
+        }
+
+        function deletePlayer(idx) {
+            if (confirm('¿Eliminar jugador?')) {
+                const data = getData();
+                data.players.splice(idx, 1);
+                saveData(data);
+                loadPlayers();
+                loadAdminContent();
+            }
+        }
+
+        function loadCollections() {
+            const data = getData();
+            const grid = document.getElementById('collectionsGrid');
+            if (!data.collections || data.collections.length === 0) {
+                grid.innerHTML = '<div class="empty-state">📭 Colecciones próximamente</div>';
+                return;
+            }
+            grid.innerHTML = data.collections.map(item => `
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="${item.image}">
+                    </div>
+                    <div class="collection-content">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <div class="collection-price">${item.price}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadPlayers() {
+            const data = getData();
+            const grid = document.getElementById('playersGrid');
+            if (!data.players || data.players.length === 0) {
+                grid.innerHTML = '<div class="empty-state">📭 Jugadores próximamente</div>';
+                return;
+            }
+            grid.innerHTML = data.players.map(item => `
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="${item.image}">
+                    </div>
+                    <div class="player-badge">⭐ STAR</div>
+                    <div class="player-content">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadComments() {
+            const data = getData();
+            const list = document.getElementById('commentsList');
+            if (!data.comments || data.comments.length === 0) {
+                list.innerHTML = '<div class="no-comments">👂 Sin comentarios aún. ¡Sé el primero!</div>';
+                return;
+            }
+            list.innerHTML = data.comments.map(item => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-author">👤 ${item.name}</span>
+                        <span class="comment-date">${new Date(item.date).toLocaleDateString('es-ES')}</span>
+                    </div>
+                    <div class="comment-text">${item.text}</div>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = getData();
+            if (!data.comments) data.comments = [];
+            data.comments.unshift({
+                name: document.getElementById('commentName').value,
+                email: document.getElementById('commentEmail').value,
+                text: document.getElementById('commentText').value,
+                date: new Date().toISOString()
+            });
+            saveData(data);
+            loadComments();
+            document.getElementById('commentForm').reset();
+            alert('✅ ¡Comentario enviado!');
+        });
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('adminModal');
+            if (event.target === modal) closeAdminModal();
+        }
+
+        initializeStorage();
+        loadCollections();
+        loadPlayers();
+        loadComments();
+    </script>
+</body>
+</html>
